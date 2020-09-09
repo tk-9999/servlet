@@ -21,14 +21,16 @@ public class ServletSample extends HttpServlet {
      */
     public ServletSample() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
+		String name = request.getParameter("name");
+        String age = request.getParameter("age");
+
 		PrintWriter out = response.getWriter();
 	    out.println("<html>");
 	    out.println("<head>");
@@ -36,6 +38,8 @@ public class ServletSample extends HttpServlet {
 	    out.println("</head>");
 	    out.println("<body>");
 	    out.println("<h1>Hello World!</h1>");
+	    out.println("<p> Name ->" + name + "</p>");
+	    out.println("<p> Age ->" + age + "</p>");
 	    out.println("</body></html>");
 	}
 
