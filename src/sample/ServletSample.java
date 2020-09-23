@@ -25,6 +25,7 @@ public class ServletSample extends HttpServlet {
 		String name = request.getParameter("name");
         String age = request.getParameter("age");
 
+        response.setContentType("text/html; charset=UTF8");
 		PrintWriter out = response.getWriter();
 	    out.println("<html>");
 	    out.println("<head>");
