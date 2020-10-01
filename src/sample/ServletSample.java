@@ -35,6 +35,7 @@ public class ServletSample extends HttpServlet {
 	    out.println("<h1>Hello World!</h1>");
 	    out.println("<p> Name ->" + name + "</p>");
 	    out.println("<p> Age ->" + age + "</p>");
+	    out.println("<a href=\"test1.jsp\">戻る</a>");
 	    out.println("</body></html>");
 	}
 
@@ -43,7 +44,21 @@ public class ServletSample extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		doGet(request, response);
+		String name = request.getParameter("name");
+        String age = request.getParameter("age");
+
+        response.setContentType("text/html; charset=UTF8");
+		PrintWriter out = response.getWriter();
+	    out.println("<html>");
+	    out.println("<head>");
+	    out.println("<title>Hello World!</title>");
+	    out.println("</head>");
+	    out.println("<body>");
+	    out.println("<h1>Hello World!</h1>");
+	    out.println("<p> Name ->" + name + "</p>");
+	    out.println("<p> Age ->" + age + "</p>");
+	    out.println("<a href=\"test1.jsp\">戻る</a>");
+	    out.println("</body></html>");
 	}
 
 }
